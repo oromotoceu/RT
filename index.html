@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Visitantes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h2>Cadastro de Visitantes</h2>
+
+    <!-- Formulário de Cadastro -->
+    <form class="visitor-form">
+        
+        <!-- Nome do Visitante -->
+        <div class="form-group">
+            <label for="name">Nome Completo</label>
+            <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+        </div>
+
+        <!-- E-mail -->
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+        </div>
+
+        <!-- Telefone -->
+        <div class="form-group">
+            <label for="phone">Telefone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(XX) XXXXX-XXXX" required>
+        </div>
+
+        <!-- Data da Visita -->
+        <div class="form-group">
+            <label for="visitDate">Data da Visita</label>
+            <input type="date" id="visitDate" name="visitDate" required>
+        </div>
+
+        <!-- Motivo da Visita -->
+        <div class="form-group">
+            <label>Motivo da Visita</label>
+            <input type="radio" id="business" name="reason" value="Negócios" required>
+            <label for="business">Negócios</label>
+            <input type="radio" id="personal" name="reason" value="Pessoal">
+            <label for="personal">Pessoal</label>
+        </div>
+
+        <!-- Preferências de Contato -->
+        <div class="form-group">
+            <label>Preferências de Contato</label>
+            <input type="checkbox" id="newsletter" name="contactPreference" value="Newsletter">
+            <label for="newsletter">Receber Newsletter</label>
+            <input type="checkbox" id="offers" name="contactPreference" value="Ofertas">
+            <label for="offers">Receber Ofertas e Promoções</label>
+        </div>
+
+        <!-- Seleção do Departamento Visitado -->
+        <div class="form-group">
+            <label for="department">Departamento Visitado</label>
+            <select id="department" name="department" required>
+                <option value="">Selecione um departamento</option>
+                <option value="vendas">Vendas</option>
+                <option value="suporte">Suporte</option>
+                <option value="marketing">Marketing</option>
+                <option value="financeiro">Financeiro</option>
+            </select>
+        </div>
+
+        <!-- Botão de Envio -->
+        <div class="form-group">
+            <button type="submit">Cadastrar</button>
+        </div>
+        
+    </form>
+
+</body>
+</html>
+}
