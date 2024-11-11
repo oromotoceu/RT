@@ -8,32 +8,77 @@
 </head>
 <body>
 
-    <h2>Formulário de Cadastro de Visitante</h2>
     <form id="cadastroForm">
-        <label for="nome">Nome Completo:</label>
-        <input type="text" id="nome" name="nome" required>
+        <h2>Cadastro de Visitantes</h2>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label>Gênero:</label>
-        <div class="radio-group">
-            <label><input type="radio" name="genero" value="Masculino" required> Masculino</label>
-            <label><input type="radio" name="genero" value="Feminino"> Feminino</label>
-            <label><input type="radio" name="genero" value="Outro"> Outro</label>
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
         </div>
 
-        <label>Soluções de Problemas Conserto de Máquinas:</label>
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="máquinas" value="Computador"> Computador</label>
-            <label><input type="checkbox" name="máquinas" value="Celular"> Celular</label>
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
         </div>
 
-        <label for="comentarios">Comentários:</label>
-        <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+        <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone">
+        </div>
 
-        <button type="submit">Cadastrar</button>
+        <div class="form-group">
+            <label>Tipo de Dispositivo:</label><br>
+            <input type="radio" id="computador" name="dispositivo" value="Computador">
+            <label for="computador">Computador</label><br>
+            <input type="radio" id="celular" name="dispositivo" value="Celular">
+            <label for="celular">Celular</label>
+        </div>
+
+        <div class="form-group">
+            <label for="problema">Descrição do Problema:</label><br>
+            <textarea id="problema" name="problema" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Serviços Solicitados:</label><br>
+            <input type="checkbox" id="diagnostico" name="servico[]" value="Diagnóstico">
+            <label for="diagnostico">Diagnóstico</label><br>
+            <input type="checkbox" id="troca_pecas" name="servico[]" value="Troca de Peças">
+            <label for="troca_pecas">Troca de Peças</label><br>
+            <input type="checkbox" id="reparacao_software" name="servico[]" value="Reparação de Software">
+            <label for="reparacao_software">Reparação de Software</label><br>
+            <input type="checkbox" id="limpeza" name="servico[]" value="Limpeza">
+            <label for="limpeza">Limpeza</label>
+        </div>
+
+        <button type="submit" class="button">Enviar Cadastro</button>
     </form>
+
+    <!-- Mensagem de sucesso -->
+    <div class="success-message" id="successMessage">Cadastrado com sucesso!</div>
+
+    <script>
+        const form = document.getElementById("cadastroForm");
+        const successMessage = document.getElementById("successMessage");
+
+        // Exibe a mensagem de sucesso ao enviar o formulário
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+            
+            // Exibe a mensagem de sucesso
+            successMessage.style.display = "block";
+            
+            // Limpa os campos do formulário
+            form.reset();
+        });
+
+        // Oculta a mensagem de sucesso ao pressionar a tecla Backspace
+        form.addEventListener("keydown", function(event) {
+            if (event.key === "Backspace") {
+                successMessage.style.display = "none";
+            }
+        });
+    </script>
 
 </body>
 </html>

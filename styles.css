@@ -1,87 +1,86 @@
-/* Estilos Gerais */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* Estilos básicos da página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f3f4f6;
+    background-color: #00A3FF; /* Cor de fundo mais vibrante */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    flex-direction: column;
-}
-
-h2 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
+    height: 100vh;
+    margin: 0;
 }
 
 form {
-    background-color: #fff;
+    color: #1A237E; /* Azul escuro para destaque */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
-    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
 }
-
 label {
     font-weight: bold;
-    margin: 10px 0 5px;
-    display: block;
-    color: #555;
 }
+.form-group {
+    margin-bottom: 15px;
+    color: #1A237E; /* Azul escuro */
+
+}
+
 
 input[type="text"],
 input[type="email"],
+input[type="tel"],
 textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 8px;
+    border: 2px solid #29B6F6; /* Borda azul clara */
     border-radius: 4px;
-    margin-bottom: 15px;
-    font-size: 1rem;
+    box-sizing: border-box;
 }
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-.radio-group,
-.checkbox-group {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.radio-group label,
-.checkbox-group label {
-    font-weight: normal;
-    color: #333;
-}
-
-button {
+.button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #4CAF50;
+    color: Light cyan;
     border: none;
     border-radius: 4px;
-    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+.button:hover {
+    background-color: #45a049;
 }
 
-button:hover {
-    background-color: #0056b3;
+/* Estilo para checkboxes e radios */
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+    margin-right: 5px;
+    transform: scale(1.2);
+}
+
+/* Botão de envio */
+.button {
+    width: 100%;
+    padding: 10px;
+    background-color: #43A047; /* Verde vibrante */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+/* Efeito hover no botão */
+.button:hover {
+    background-color: #388E3C; /* Verde mais escuro no hover */
+}
+
+/* Mensagem de sucesso */
+.success-message {
+    display: none;
+    color: green;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
 }
