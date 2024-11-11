@@ -13,6 +13,7 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    flex-direction: column;
 }
 
 h2 {
@@ -28,6 +29,7 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 label {
