@@ -8,77 +8,68 @@
 </head>
 <body>
 
-    <form id="cadastroForm">
-        <h2>Cadastro de Visitantes</h2>
+<div class="form-container">
+    <h2>Cadastro de Visitante</h2>
+    <form id="visitanteForm">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required>
 
-        <div class="form-group">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone">
+
+        <div class="radio-group">
+            <label>Tipo de Serviço:</label>
+            <label><input type="radio" name="servico" value="Conserto de Computador" required> Conserto de Computador</label>
+            <label><input type="radio" name="servico" value="Conserto de Celular"> Conserto de Celular</label>
         </div>
 
-        <div class="form-group">
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
+        <div class="checkbox-group">
+            <label>Problemas apresentados:</label>
+            <label><input type="checkbox" name="problema" value="Tela Quebrada"> Tela Quebrada</label>
+            <label><input type="checkbox" name="problema" value="Bateria com Problema"> Bateria com Problema</label>
+            <label><input type="checkbox" name="problema" value="Sistema Lento"> Sistema Lento</label>
+            <label><input type="checkbox" name="problema" value="Outros"> Outros</label>
         </div>
 
-        <div class="form-group">
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone">
-        </div>
+        <label for="detalhes">Detalhes do Problema:</label>
+        <textarea id="detalhes" name="detalhes" rows="4"></textarea>
 
-        <div class="form-group">
-            <label>Tipo de Dispositivo:</label><br>
-            <input type="radio" id="computador" name="dispositivo" value="Computador">
-            <label for="computador">Computador</label><br>
-            <input type="radio" id="celular" name="dispositivo" value="Celular">
-            <label for="celular">Celular</label>
-        </div>
-
-        <div class="form-group">
-            <label for="problema">Descrição do Problema:</label><br>
-            <textarea id="problema" name="problema" rows="4" required></textarea>
-        </div>
-
-        <div class="form-group">
-            <label>Serviços Solicitados:</label><br>
-            <input type="checkbox" id="diagnostico" name="servico[]" value="Diagnóstico">
-            <label for="diagnostico">Diagnóstico</label><br>
-            <input type="checkbox" id="troca_pecas" name="servico[]" value="Troca de Peças">
-            <label for="troca_pecas">Troca de Peças</label><br>
-            <input type="checkbox" id="reparacao_software" name="servico[]" value="Reparação de Software">
-            <label for="reparacao_software">Reparação de Software</label><br>
-            <input type="checkbox" id="limpeza" name="servico[]" value="Limpeza">
-            <label for="limpeza">Limpeza</label>
-        </div>
-
-        <button type="submit" class="button">Enviar Cadastro</button>
+        <button type="button" onclick="submitForm()">Cadastrar</button>
+        <p class="note">Nós garantimos a segurança dos seus dados!</p>
     </form>
+</div>
 
-    <!-- Mensagem de sucesso -->
-    <div class="success-message" id="successMessage">Cadastrado com sucesso!</div>
+<script>
+    function submitForm() {
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const telefone = document.getElementById("telefone").value;
+        const servico = document.querySelector('input[name="servico"]:checked')?.value;
+        const problemas = Array.from(document.querySelectorAll('input[name="problema"]:checked')).map(el => el.value);
+        const detalhes = document.getElementById("detalhes").value;
 
-    <script>
-        const form = document.getElementById("cadastroForm");
-        const successMessage = document.getElementById("successMessage");
+        if (!email) {
+            alert("Por favor, preencha o campo de email.");
+            return;
+        }
 
-        // Exibe a mensagem de sucesso ao enviar o formulário
-        form.addEventListener("submit", function(event) {
-            event.preventDefault(); // Impede o envio do formulário
-            
-            // Exibe a mensagem de sucesso
-            successMessage.style.display = "block";
-            
-            // Limpa os campos do formulário
-            form.reset();
-        });
+        if (!servico) {
+            alert("Por favor, selecione o tipo de serviço.");
+            return;
+        }
 
-        // Oculta a mensagem de sucesso ao pressionar a tecla Backspace
-        form.addEventListener("keydown", function(event) {
-            if (event.key === "Backspace") {
-                successMessage.style.display = "none";
-            }
-        });
-    </script>
+        alert(`Cadastro realizado com sucesso!\n\nNome: ${nome}\nEmail: ${email}\nTelefone: ${telefone}\nServiço: ${servico}\nProblemas: ${problemas.join(", ")}\nDetalhes: ${detalhes}`);
+
+        // Pergunta ao usuário se deseja fazer um novo cadastro
+        if (confirm("Deseja realizar um novo cadastro?")) {
+            // Recarrega a página para um novo cadastro
+            location.reload();
+        }
+    }
+</script>
 
 </body>
 </html>
