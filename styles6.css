@@ -25,7 +25,7 @@ main {
     width: 100vw;
 }
 
-section#login {
+section#cadastro {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -42,15 +42,7 @@ section#login {
     transition-timing-function: ease;
 }
 
-   section#login > div#imagem {
-    display: block;
-    background: #f0f8ff url(../RT/Marca.jpg) no-repeat;
-    background: cover;
-    background-position: left bottom;
-    height: 200px;
-   }
-
-   section#login > div#formulario {
+   section#cadastro > div#formulario {
     display: block;
     padding: 10px;
    }
@@ -90,11 +82,11 @@ div.campo > input {
     background-color: #E0FFE0; /* Verde Claro */
     font-size: 1em;
     width: calc(100%-44px);
-    height: 100%;
+    height: 50%;
     border: 0px;
     border-radius: 8px;
     padding: 4px;
-    transform: translateY(-10px);
+    transform: translateY(-9px);
 
 }
 
@@ -142,4 +134,3 @@ form > a.botao:houver {
 form > a.botao > i {
      font-size: 0.8em;
 }
-
