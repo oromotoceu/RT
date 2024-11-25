@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+/* Definindo a cor de fundo para todo o site */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Azul Alice, uma cor mais vibrante e clara */
+}
+
+h2 {
+    font-size: 28px; /* Tamanho da fonte */
+    color: #2c3e50; /* Um azul mais escuro para melhor contraste */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 40px; /* Espaçamento superior */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    padding: 10px; /* Espaçamento interno */
+    border-bottom: 3px solid #3498db; /* Borda azul vibrante */
+}
+
+h3 {
+    font-size: 24px;
+    color: #e67e22; /* Laranja vibrante para os subtítulos */
+    margin-top: 30px;
+    text-align: left;
+}
+
+/* Adicionando estilo para a barra de navegação horizontal */
+nav ul {
+    display: flex; /* Organiza os itens em linha */
+    justify-content: center; /* Centraliza os itens */
+    list-style-type: none; /* Remove os marcadores da lista */
+    padding: 0;
+    margin: 0;
+    background-color: #27ae60; /* Cor de fundo da barra */
+}
+
+nav ul li {
+    margin: 0 15px; /* Espaçamento horizontal entre os itens */
+    background-color: #89cff0; /* Azul Bebê */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 18px; /* Tamanho do texto dos atalhos */
+    cursor: pointer; /* Muda o cursor para indicar que o item é clicável */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: white; /* Cor do texto */
+    font-weight: bold; /* Texto em negrito */
+    padding: 10px 15px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    display: inline-block; /* Garante que os links se comportem como blocos inline */
+}
+
+ul li strong {
+    color: #2c3e50; /* Azul escuro para o texto do atalho (Ctrl + C, etc.) */
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color:#FFDAB9; /* Laranja mais claro ao passar o mouse sobre o item */
+}
+
+nav ul li a.active {
+    background-color: #f39c12; /* Cor para o link ativo */
+}
+
+/* Estilo para o contêiner de imagens em cada item da lista */
+.image-container {
+    margin-top: 10px;
+    display: block;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para destacar a imagem */
+}
+
+/* Cabeçalho e Rodapé */
+header, footer {
+    background-color: #2980b9; /* Azul vibrante */
+    color: white; /* Cor do texto */
+    text-align: center;
+    padding: 20px; /* Espaçamento interno */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+nav {
+    display: flex; /* Usando flexbox para layout */
+    justify-content: center; /* Centraliza os itens */
+    background-color: #27ae60; /* Verde vibrante para a barra de navegação */
+    padding: 10px 0; /* Espaçamento vertical */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+nav a {
+    color: white; /* Cor dos links */
+    margin: 0 20px; /* Espaçamento horizontal entre os links */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: bold; /* Negrito */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}
+
+/* Estilo para o link ativo na barra de navegação */
+nav a.active {
+    background-color: #f39c12;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.content {
+    padding: 30px; /* Espaçamento interno da seção de conteúdo */
+    margin: 0 auto; /* Centraliza a seção */
+    max-width: 1200px; /* Largura máxima da seção */
+}
+
+footer p {
+    margin: 5px 0; /* Espaçamento no rodapé */
+}
+
+/* Estilo dos resultados da busca */
+#searchResults {
+    margin-top: 20px; /* Espaçamento acima dos resultados da busca */
+    padding: 10px; /* Espaçamento interno */
+    background-color: #FFA500; /* Fundo vibrante para os resultados */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave para destaque */
+}
+
+#searchResults ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#searchResults li {
+    background-color: #89cff0; /* Azul Bebê */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+#searchResults li:hover {
+    background-color: #f39c12;
+}

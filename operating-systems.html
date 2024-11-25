@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Atalhos de teclado para sistemas operacionais.">
+    <title>Atalhos de Teclado - Sistemas Operacionais</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="media-query.css">
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<header>
+    <h1>Atalhos de Teclado - Sistemas Operacionais</h1>
+    <p>Aprenda a usar atalhos de teclado em diferentes sistemas operacionais.</p>
+
+    <!-- Barra de navegação -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="operating-systems.html" class="active">Sistemas Operacionais</a></li>
+            <li><a href="browsers.html">Navegadores</a></li>
+            <li><a href="programs.html">Programas</a></li>
+            <li><a href="register.html">Cadastro</a></li>
+            <li><a href="about.html">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <!-- Barra de busca -->
+    <input type="text" id="searchInput" placeholder="Buscar atalhos..." onkeyup="searchShortcuts()">
+    <div id="searchResults"></div> <!-- Resultados da busca logo abaixo da barra de busca -->
+</header>
+
+<main>
+    <h2>Atalhos Comuns em Sistemas Operacionais</h2>
+
+    <!-- Seção para atalhos do Windows -->
+    
+    <div class="content">
+        <section>
+        <h3>Atalhos no Windows</h3>
+        <ul id="shortcutList">
+            <li data-img="Ctrl%20+%20C.jpg">
+                <strong>Ctrl + C:</strong> Copiar
+                <div class="image-container"></div> <!-- Contêiner para exibir/ocultar a imagem -->
+            </li>
+            <li data-img="Ctrl%20+%20V.jpg">
+                <strong>Ctrl + V:</strong> Colar
+                <div class="image-container"></div> <!-- Contêiner para exibir/ocultar a imagem -->
+            </li>
+            <li data-img="Alt%20+%20Tab.jpg">
+                <strong>Alt + Tab:</strong> Alternar entre janelas abertas
+                <div class="image-container"></div>
+            </li>
+            <li data-img="Windows%20+%20D.jpg">
+                <strong>Windows + D:</strong> Minimizar todas as janelas
+                <div class="image-container"></div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Seção para atalhos do macOS -->
+        <section>
+        <h3>Atalhos no macOS</h3>
+        <ul id="shortcutList">
+            <li data-img="Cmd%20+%20C.jpg">
+                <strong>Cmd + C:</strong> Copiar
+                <div class="image-container"></div>
+            </li>
+            <li data-img="Cmd%20+%20V.jpg">
+                <strong>Cmd + V:</strong> Colar
+                <div class="image-container"></div>
+            </li>
+            <li data-img="Cmd%20+%20Espaço.jpg">
+                <strong>Cmd + Espaço:</strong> Abrir o Spotlight
+                <div class="image-container"></div>
+            </li>
+            <li data-img="Cmd%20+%20option%20+%20Esc.jpg">
+                <strong>Cmd + Option + Esc:</strong> Forçar encerramento de aplicativos
+                <div class="image-container"></div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Seção para atalhos do Linux -->
+    <section>
+        <h3>Atalhos no Linux</h3>
+        <ul id="shortcutList">
+            <li data-img="Ctrl%20+%20Alt%20+%20T.jpg">
+                <strong>Ctrl + Alt + T:</strong> Abrir o terminal
+                <div class="image-container"></div>
+            </li>
+            <li data-img="Ctrl%20+%20Alt%20+%20L.jpg">
+                <strong>Ctrl + Alt + L:</strong> Bloquear a tela
+                <div class="image-container"></div>
+            </li>
+            <li data-img="Print_Screen.jpg">
+                <strong>Print_Screen:</strong> Capturar a tela
+                <div class="image-container"></div>
+            </li>
+        </ul>
+        </section>
+</main>
+</div>
+
+<!-- Conteúdo principal -->
+<div class="content">
+    <h3>Por que usar atalhos de teclado nos sistemas operacionais?</h3>
+    <p>Atalhos de teclado são essenciais para melhorar a produtividade e facilitar o uso dos sistemas operacionais. Eles permitem que você realize ações rapidamente sem depender do mouse, o que pode economizar tempo e reduzir o esforço físico durante o uso do computador. A maioria dos atalhos são universais entre diferentes sistemas operacionais, mas também existem atalhos específicos para cada sistema.</p>
+</div>
+
+<!-- Rodapé -->
+<footer>
+    <p>&copy; 2024 Atalhos de Teclado. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    // Função para alternar entre mostrar e ocultar a imagem ao clicar no item da lista de atalhos
+    document.querySelectorAll('li').forEach(item => {
+        item.addEventListener('click', function() {
+            const imgSrc = this.getAttribute('data-img'); // Obtém o caminho da imagem relacionado ao atalho
+            const imageContainer = this.querySelector('.image-container'); // Contêiner de imagem dentro do item
+            const currentImg = imageContainer.querySelector('img');
+
+            if (currentImg) {
+                // Se a imagem já estiver sendo exibida, removê-la (ocultar)
+                imageContainer.innerHTML = '';
+            } else {
+                // Se não, exibir a nova imagem
+                imageContainer.innerHTML = `<img src="${imgSrc}" width="50%" height="auto" alt="Imagem do Atalho">`;
+            }
+        });
+    });
+// Função de busca de atalhos e exibição dos resultados
+function searchShortcuts() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toLowerCase();
+        const items = document.querySelectorAll('#shortcutList li');
+        const results = [];
+
+        // Limpa os resultados anteriores
+        document.getElementById('searchResults').innerHTML = '';
+
+        // Se o campo estiver vazio, saia da função
+        if (filter === "") {
+            return;
+        }
+
+        // Filtra os atalhos com base na busca
+        items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            if (text.includes(filter)) {
+                results.push({
+                    html: item.innerHTML,
+                    img: item.getAttribute('data-img')
+                });
+            }
+        });
+
+        // Exibe os resultados se houver correspondências
+        if (results.length > 0) {
+            const resultHTML = results.map(result => 
+                `<li data-img="${result.img}">${result.html}<div class="image-container"></div></li>`
+            ).join('');
+
+            document.getElementById('searchResults').innerHTML = '<ul>' + resultHTML + '</ul>';
+            
+            // Adiciona evento de clique para alternar a exibição da imagem nos resultados da busca
+            document.querySelectorAll('#searchResults li').forEach(item => {
+                item.addEventListener('click', function() {
+                    const imgSrc = this.getAttribute('data-img');
+                    const imageContainer = this.querySelector('.image-container');
+                    const currentImg = imageContainer.querySelector('img');
+
+                    if (currentImg) {
+                        // Se a imagem já estiver sendo exibida, removê-la (ocultar)
+                        imageContainer.innerHTML = '';
+                    } else {
+                        // Se não, exibir a nova imagem
+                        imageContainer.innerHTML = `<img src="${imgSrc}" width="50%" height="auto" alt="Imagem do Atalho">`;
+                    }
+                });
+            });
+        } else {
+            document.getElementById('searchResults').innerHTML = '<p>Nenhum resultado encontrado</p>';
+        }
+    }
+
+    // Evento para limpar resultados ao pressionar Backspace
+    document.getElementById('searchInput').addEventListener('keyup', function(event) {
+        if (event.key === 'Backspace' && this.value === '') {
+            document.getElementById('searchResults').innerHTML = '';
+        }
+    });
+</script>
+
+</body>
+</html>

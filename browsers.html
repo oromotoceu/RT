@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Atalhos de teclado para navegadores de internet.">
+    <title>Atalhos de Teclado - Navegadores</title>
+    <link rel="stylesheet" href="styles3.css">
+    <link rel="stylesheet" href="media-query.css">
+</head>
+<body>
+
+<!-- Cabeçalho -->
+<header>
+    <h1>Atalhos de Teclado - Navegadores</h1>
+    <p>Aprenda a usar atalhos de teclado nos principais navegadores.</p>
+
+    <!-- Barra de navegação -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="operating-systems.html">Sistemas Operacionais</a></li>
+            <li><a href="browsers.html" class="active">Navegadores</a></li>
+            <li><a href="programs.html">Programas</a></li>
+            <li><a href="register.html">Cadastro</a></li>
+            <li><a href="about.html">Sobre</a></li>
+            
+        </ul>
+    </nav>
+
+<!-- Barra de busca -->
+<input type="text" id="searchInput" placeholder="Buscar atalhos..." onkeyup="searchShortcuts()">
+<div id="searchResults"></div> <!-- Resultados da busca logo abaixo da barra de busca -->
+</header>
+
+<main>
+    
+    <h2>Atalhos Comuns em Navegadores</h2>
+
+    <!-- Seção para atalhos do Google Chrome -->
+    <div class="content">
+    <section>
+        <h3>Atalhos no Google Chrome</h3>
+        <ul id="shortcutList">
+            <li data-img="Ctrl%20+%20T.jpg">
+                <strong>Ctrl + T:</strong> Nova aba
+                <div class="image-container"></div>
+            </li>
+            <li data-img="Ctrl%20+%20Shift%20+%20T.jpg">
+                <strong>Ctrl + Shift + T:</strong> Reabrir aba fechada
+                <div class="image-container"></div>
+            </li>
+            <li data-img="Ctrl%20+%20W.png">
+                <strong>Ctrl + W:</strong> Fechar aba
+                <div class="image-container"></div>
+            </li>
+            <li data-img="Ctrl%20+%20L.jpg">
+                <strong>Ctrl + L:</strong> Focar na barra de endereço
+                <div class="image-container"></div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Seção para atalhos do Mozilla Firefox -->
+    <section>
+        <h3>Atalhos no Mozilla Firefox</h3>
+        <ul id="shortcutList">
+            <li data-img="Ctrl%20+%20T.jpg">
+                <strong>Ctrl + T:</strong> Nova aba
+                <div class="image-container"></div>
+            </li>
+            <li data-img="Ctrl%20+%20Shift%20+%20T.jpg">
+                <strong>Ctrl + Shift + T:</strong> Reabrir aba fechada
+                <div class="image-container"></div>
+            </li>
+            <li data-img="Ctrl%20+%20W.png">
+                <strong>Ctrl + W:</strong> Fechar aba
+                <div class="image-container"></div>
+            </li>
+            <li data-img="Ctrl%20+%20L.jpg">
+                <strong>Ctrl + L:</strong> Focar na barra de endereço
+                <div class="image-container"></div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Seção para atalhos do Microsoft Edge -->
+    <section>
+        <h3>Atalhos no Microsoft Edge</h3>
+        <ul id="shortcutList">
+            <li data-img="Ctrl%20+%20T.jpg">
+                <strong>Ctrl + T:</strong> Nova aba
+                <div class="image-container"></div>
+            </li>
+            <li data-img="Ctrl%20+%20Shift%20+%20T.jpg">
+                <strong>Ctrl + Shift + T:</strong> Reabrir aba fechada
+                <div class="image-container"></div>
+            </li>
+            <li data-img="Ctrl%20+%20W.png">
+                <strong>Ctrl + W:</strong> Fechar aba
+                <div class="image-container"></div>
+            </li>
+            <li data-img="Ctrl%20+%20L.jpg">
+                <strong>Ctrl + L:</strong> Focar na barra de endereço
+                <div class="image-container"></div>
+            </li>
+        </ul>
+    </section>
+</main>
+</div>
+
+<!-- Conteúdo principal -->
+<div class="content">
+    <h3>Por que usar atalhos de teclado nos navegadores?</h3>
+    <p>Atalhos de teclado são muito úteis para navegar de forma mais eficiente pela web. Eles permitem que você abra novas abas, reabra abas fechadas, e navegue sem precisar usar o mouse. Muitos desses atalhos funcionam de maneira semelhante em diferentes navegadores, o que facilita a adoção de novos navegadores sem precisar aprender novos comandos.</p>
+</div>
+
+<!-- Rodapé -->
+<footer>
+    <p>&copy; 2024 Atalhos de Teclado. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    // Função para alternar entre mostrar e ocultar a imagem ao clicar no item da lista de atalhos
+    document.querySelectorAll('li').forEach(item => {
+        item.addEventListener('click', function() {
+            const imgSrc = this.getAttribute('data-img'); // Obtém o caminho da imagem relacionado ao atalho
+            const imageContainer = this.querySelector('.image-container'); // Contêiner de imagem dentro do item
+            const currentImg = imageContainer.querySelector('img');
+
+            if (currentImg) {
+                // Se a imagem já estiver sendo exibida, removê-la (ocultar)
+                imageContainer.innerHTML = '';
+            } else {
+                // Se não, exibir a nova imagem
+                imageContainer.innerHTML = `<img src="${imgSrc}" width="50%" height="auto" alt="Imagem do Atalho">`;
+            }
+        });
+    });
+
+// Função de busca de atalhos e exibição dos resultados
+function searchShortcuts() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toLowerCase();
+        const items = document.querySelectorAll('#shortcutList li');
+        const results = [];
+
+        // Limpa os resultados anteriores
+        document.getElementById('searchResults').innerHTML = '';
+
+        // Se o campo estiver vazio, saia da função
+        if (filter === "") {
+            return;
+        }
+
+        // Filtra os atalhos com base na busca
+        items.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            if (text.includes(filter)) {
+                results.push({
+                    html: item.innerHTML,
+                    img: item.getAttribute('data-img')
+                });
+            }
+        });
+
+        // Exibe os resultados se houver correspondências
+        if (results.length > 0) {
+            const resultHTML = results.map(result => 
+                `<li data-img="${result.img}">${result.html}<div class="image-container"></div></li>`
+            ).join('');
+
+            document.getElementById('searchResults').innerHTML = '<ul>' + resultHTML + '</ul>';
+            
+            // Adiciona evento de clique para alternar a exibição da imagem nos resultados da busca
+            document.querySelectorAll('#searchResults li').forEach(item => {
+                item.addEventListener('click', function() {
+                    const imgSrc = this.getAttribute('data-img');
+                    const imageContainer = this.querySelector('.image-container');
+                    const currentImg = imageContainer.querySelector('img');
+
+                    if (currentImg) {
+                        // Se a imagem já estiver sendo exibida, removê-la (ocultar)
+                        imageContainer.innerHTML = '';
+                    } else {
+                        // Se não, exibir a nova imagem
+                        imageContainer.innerHTML = `<img src="${imgSrc}" width="50%" height="auto" alt="Imagem do Atalho">`;
+                    }
+                });
+            });
+        } else {
+            document.getElementById('searchResults').innerHTML = '<p>Nenhum resultado encontrado</p>';
+        }
+    }
+
+    // Evento para limpar resultados ao pressionar Backspace
+    document.getElementById('searchInput').addEventListener('keyup', function(event) {
+        if (event.key === 'Backspace' && this.value === '') {
+            document.getElementById('searchResults').innerHTML = '';
+        }
+    });
+</script>
+
+</body>
+</html>
