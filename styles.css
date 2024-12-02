@@ -64,12 +64,14 @@ ul li strong {
     font-weight: bold;
 }
 
+/* Alterando a cor ao passar o mouse */
 nav ul li a:hover {
-    background-color:#FFDAB9; /* Laranja mais claro ao passar o mouse sobre o item */
+    background-color: #004d66; /* Azul petróleo */
 }
 
+/* Cor para o link ativo */
 nav ul li a.active {
-    background-color: #f39c12; /* Cor para o link ativo */
+    background-color: #003d4d; /* Azul escuro */
 }
 
 /* Estilo para o contêiner de imagens em cada item da lista e nos resultados da busca */

@@ -1,136 +1,151 @@
 @charset "UTF-8";
 
-/* 
-Paleta de cores 
-Azul Escuro: #2c3e50
-Azul Alice: #f0f8ff 
-*/
+/* Definindo a cor de fundo para todo o site */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Azul Alice, uma cor mais vibrante e clara */
+}
 
-* {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+h2 {
+    font-size: 28px; /* Tamanho da fonte */
+    color: #2c3e50; /* Um azul mais escuro para melhor contraste */
+    text-align: center; /* Centraliza o texto */
+    margin-top: 40px; /* Espaçamento superior */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    padding: 10px; /* Espaçamento interno */
+    border-bottom: 3px solid #3498db; /* Borda azul vibrante */
+}
+
+h3 {
+    font-size: 24px;
+    color: #e67e22; /* Laranja vibrante para os subtítulos */
+    margin-top: 30px;
+    text-align: left;
+}
+
+/* Estilo para barra de navegação horizontal */
+nav ul {
+    display: flex; /* Configura a barra como flexbox */
+    justify-content: center; /* Centraliza os itens */
+    list-style-type: none; /* Remove os marcadores da lista */
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    background-color: #27ae60; /* Fundo da barra de navegação */
 }
 
-body, html {
-    background-color: #f0f8ff; /* Azul Alice, uma cor mais vibrante e clara */
-    height: 100vh;
-    width: 100vw;
+nav ul li {
+    margin: 0 15px; /* Espaçamento horizontal entre os itens */
+    background-color: #89cff0; /* Azul Bebê */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-size: 18px; /* Tamanho do texto dos atalhos */
+    cursor: pointer; /* Muda o cursor para indicar que o item é clicável */
 }
 
-main {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
+nav ul li a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: white; /* Cor do texto */
+    font-weight: bold;
+    padding: 10px 15px; /* Espaçamento interno dos links */
+    border-radius: 5px; /* Bordas arredondadas */
+    display: inline-block; /* Garante que os links se comportem como blocos inline */
 }
 
-section#cadastro {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    overflow: hidden;
-
-    background-color: white;
-    width: 250px;
-    height: 515px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.450);
-
-    transform: translate(-50%, -50%);
-    transition: width .3s, height .3s;
-    transition-timing-function: ease;
+ul li strong {
+    color: #2c3e50; /* Azul escuro para o texto do atalho (Ctrl + C, etc.) */
+    font-weight: bold;
 }
 
-   section#cadastro > div#formulario {
-    display: block;
-    padding: 10px;
-   }
+/* Alterando a cor ao passar o mouse */
+nav ul li a:hover {
+    background-color: #004d66; /* Azul petróleo */
+}
 
-div#formulario > h1 {
+/* Cor para o link ativo */
+nav ul li a.active {
+    background-color: #003d4d; /* Azul escuro */
+}
+
+/* Cabeçalho e Rodapé */
+header, footer {
+    background-color: #2980b9; /* Azul vibrante */
+    color: white; /* Cor do texto */
     text-align: center;
-    margin-top: 10px;  
+    padding: 20px; /* Espaçamento interno */
+    margin-bottom: 20px; /* Espaçamento inferior */
 }
 
-div#formulario > p {
-    font-size: 0.8em;  
+nav {
+    display: flex; /* Usando flexbox para layout */
+    justify-content: center; /* Centraliza os itens */
+    background-color: #27ae60; /* Verde vibrante para a barra de navegação */
+    padding: 10px 0; /* Espaçamento vertical */
+    margin-bottom: 20px; /* Espaçamento inferior */
 }
 
-form > div.campo {
-    background-color: #f0f8ff;
-    border: 2px solid #f0f8ff;
-    display: block;
-    width: 100%;
-    height: 40px;
-    border-radius: 8px;
-    margin: 5px 0px;
+nav a {
+    color: white; /* Cor dos links */
+    margin: 0 20px; /* Espaçamento horizontal entre os links */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: bold; /* Negrito */
 }
 
-div.campo > label {
-    display: none;
+nav a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
 }
 
-div.campo > {
+/* Estilo para o link ativo na barra de navegação */
+nav a.active {
+    background-color: #f39c12;
     color: white;
-    background-color: black;
-    font-size: 2em;
-    width: 40px;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-div.campo > input {
-    background-color: #E0FFE0; /* Verde Claro */
-    font-size: 1em;
-    width: calc(100%-44px);
-    height: 50%;
-    border: 0px;
+.content {
+    padding: 30px; /* Espaçamento interno da seção de conteúdo */
+    margin: 0 auto; /* Centraliza a seção */
+    max-width: 1200px; /* Largura máxima da seção */
+}
+
+footer p {
+    margin: 5px 0; /* Espaçamento no rodapé */
+}
+
+/* Estilo para o link do YouTube */
+a.youtube-link {
+    color: #ff0000; /* Cor vermelha do YouTube */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.youtube-link:hover {
+    color: #c4302b; /* Tom mais escuro de vermelho ao passar o mouse */
+    text-decoration: underline;
+}
+
+/* Estilo dos resultados da busca */
+#searchResults {
+    margin-top: 20px; /* Espaçamento acima dos resultados da busca */
+    padding: 10px; /* Espaçamento interno */
+    background-color: #FFA500; /* Fundo vibrante para os resultados */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave para destaque */
+}
+
+#searchResults ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#searchResults li {
+    background-color: #89cff0; /* Azul Bebê */
+    padding: 10px;
+    margin-bottom: 10px;
     border-radius: 8px;
-    padding: 4px;
-    transform: translateY(-9px);
-
 }
 
-div.campo > input:focus-within {
-    background-color: white;
-    border: none;
-
-}
-
-form > input[type=submit] {
-     display: block;
-     font-size: 1em;
-     width: 100%;
-     height: 40px;
-     background-color: #2c3e50;
-     color: white;
-     border: none;
-     border-radius: 5px;
-     cursor: pointer;
-}
-
-form > input[type=submit]:houver{
-     background-color: #00008B  /* Verde vibrante */  
-}
-
-form > a.botao {
-     display: block;
-     text-align: center;
-     font-size: 1em;
-     width: 100%;
-     height: 40px;
-     padding-top: 5px;
-     margin-top: 5px;
-     background-color: white; 
-     color: #00008B;
-     border: 1px solid #27ae60;
-     border-radius: 7px;
-     text-decoration: none;
-}
-
-form > a.botao:houver {
-     background-color: #E0FFE0; /* Verde Claro */
-}
-
-form > a.botao > i {
-     font-size: 0.8em;
+#searchResults li:hover {
+    background-color: #f39c12;
 }
